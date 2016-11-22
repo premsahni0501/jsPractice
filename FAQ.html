@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FAQ</title>
+
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'open sans';
+      }
+      body{
+        background-color: #eee;
+        color:#444;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .q-box{
+        background-color:white;
+        margin-top: 20px;
+        padding: 10px 20px;
+      }
+
+      .q{
+        cursor: pointer;
+        margin: 4px 0;
+        line-height: 40px;
+        position: relative;
+      }
+
+      .expand{
+        position: absolute;
+        right: 10px;
+        border: 1px solid #444;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-size: 0.5em;
+        line-height: 20px;
+      }
+
+      .q:hover,.expand:hover{
+        color:#914496;
+        border-color: #914496;
+      }
+      #faq-head
+      {
+        margin: 20px 0;
+      }
+
+      .ans{
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3 id="faq-head">FAQs</h3>
+    <div class="q-box">
+      <h5 id="q1" class="q" onclick='showAns(this.attributes["id"].value)'>Q 1. What is Falana?<span class="expand">Expand</span></h5>
+      <p class="ans">Falana is a Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Proin vulputate, sem at fermentum sagittis, ipsum purus bibendum lectus,
+        et congue dui diam non nibh. sollicitud invarius dui eu porta in scelerisque
+        velit suscipit, vehicula est. Donec varius dui eu porta lacinia. Aenean in
+        enim odio. Aliquam rutrum mi euismod est congue, in scelerisque turpis aliquet.
+        Nam urna nisi, ultricies a purus ac, cursus fermentum neque. Cras quis interdum urna.
+      </p>
+    </div>
+    <div class="q-box">
+      <h5 id="q2" class="q" onclick='showAns(this.attributes["id"].value)'>Q 2. What is Dhimka?<span class="expand">Expand</span></h5>
+      <p class="ans">Dhimka is a Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Proin vulputate, sem at fermentum sagittis, ipsum purus bibendum lectus,
+        et congue dui diam non nibh. Pellentesque eu justo felis. Fusce nec felis
+        nec sem pulvinar eleifend in nec lorem. Ut eu tortor malesuada, sollicitudin
+        velit suscipit, vehicula est. Donec varius dui eu porta lacinia. Aenean in
+        enim odio. Aliquam rutrum mi euismod est congue, in scelerisque turpis aliquet.
+      </p>
+    </div>
+
+
+    <script>
+      var showHide = false;
+      var preserveOpenStateOfID;
+
+      function showAns(id)
+      {
+        var ans = document.getElementsByClassName("ans");
+        var ansNum = Number(id.substring(1,2))-1;
+        var expandBtns = document.getElementsByClassName("expand");
+
+        if(ans[ansNum].style.display == "block")
+        {
+          ans[ansNum].style.display = "none";
+          document.getElementById(id).style.color = "inherit";
+          expandBtns[ansNum].innerHTML = "Expand";
+          expandBtns[ansNum].style.borderColor = "inherit";
+        }
+        else {
+          ans[ansNum].style.display = "block";
+          document.getElementById(id).style.color = "#914496";
+
+          expandBtns[ansNum].innerHTML = "Collapse";
+          expandBtns[ansNum].style.borderColor = "#914496";
+        }
+
+      }
+    </script>
+  </body>
+</html>

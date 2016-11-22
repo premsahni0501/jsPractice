@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8"></meta>
+		
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+			}
+			
+			body{
+				font-family:'open sans';
+				width:90%;
+				margin: 0 auto;
+				background-color:#ddd;
+				font-size:1em;
+			}
+			
+			.login-form{
+				max-width: 500px;
+				margin: auto auto;
+				background-color:white;
+				padding:20px;
+				margin-top:10%;
+				box-shadow: 0 1px 3px #c1c1c1;
+			}
+			.input-box{
+				margin:0;
+				padding:0 10px;
+				line-height:50px;
+				color:#192d33;
+				font-weight:bold;
+				width:100%;
+				display:block;
+			}
+			
+			.button{
+				border:1px solid #ddd;
+				line-height:50px;
+				color:white;
+				font-weight:bold;
+				background:#ef3a65;
+				cursor:pointer;
+				display:inline-block;
+				width:100%;
+			}
+			
+			#demo,#errorMsg{
+				margin-bottom:10px;
+			}
+			
+			#errorMsg{
+				color:red;
+			}
+			.textfield{
+				margin-bottom:10px;
+			}
+			.textfield::active{
+				border:blue;
+			}
+			.100%{
+				width:100%;
+			}
+			
+			.logo{
+				font-family:'amita';
+				font-weight:bold;
+				color:#ef3a65;
+				text-align:center;
+			}
+			
+			.logo:after{
+				content:"";
+				display:block;
+				height:1px;
+				background-color:#eee;
+			}
+			
+			.err{
+				color:red;
+				font-size:0.7em;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div action="" class="login-form">
+			<h2 class="logo">WebApp</h2>
+			<br>
+			<p id="demo">Register.</p>
+			<br>
+			<div class="100% textfield">
+				<input class="input-box" id="username" onblur="check()" type="text" placeholder="Please enter an username"/>		
+			</div>
+			<p class="err" id="errorInUsername"></p>
+			<div class="100% textfield">
+				<input class="input-box" id="password" onblur="check()" type="password" placeholder="Type your password"/>		
+			</div>
+			<p class="err" id="errorInPassword"></p>
+			<div class="100% textfield">
+				<input class="input-box" id="re-password" onblur="check()" type="password" placeholder="Re-type your password"/>		
+			</div>
+			<p class="err" id="errorInRePassword"></p>
+			<div class="100%">
+				<button class="button" id="enter" onclick="validate()">Login</button>
+			</div>
+			<p class="err" id="errorMsg"></p>
+		</div>
+		
+		
+		<script>
+		var nameLable = document.getElementById('demo');
+		
+		var username = document.getElementById('username');
+		
+		var password = document.getElementById('password');
+		var rePassword = document.getElementById('re-password');
+		
+		var enterbtn = document.getElementById('enter');
+		
+		var errorInUsername = document.getElementById('errorInUsername');
+		var errorInPassword = document.getElementById('errorInPassword');
+		var errorInRePassword = document.getElementById('errorInRePassword');
+		var errorMsg = document.getElementById('errorMsg');
+		
+		function validate()
+		{
+			if(username.value.length > 0)
+			{
+				errorInUsername.style.display = "none";
+				if(password.value.length > 0 && rePassword.value.length > 0)
+				{
+					if(password.value == rePassword.value)
+					{
+						nameLable.innerHTML = "Hey " + username.value + ", You have successfully registered.";
+						username.style.display = "none";
+						password.style.display = "none";
+						rePassword.style.display = "none";
+						enterbtn.style.display = "none";
+						errorMsg.style.display = "none";
+					}
+					else{
+						errorMsg.innerHTML = "Your passwords dont match, please re enter."
+					}
+				}
+				else if(password.value.length == 0)
+				{
+					errorInPassword.innerHTML = "Please enter a valid password.";
+				}
+				else if(rePassword.value.length == 0)
+				{
+					errorInRePassword.innerHTML = "Please re-type your password.";
+				}
+				
+				
+				
+			}
+			else 
+			{
+				errorInUsername.style.display = "block";
+				errorInUsername.innerHTML = "Please enter a valid username.";
+			}
+			
+		} 
+		
+		function check()
+		{
+			if(username.value.length > 0)
+			{
+				errorInUsername.style.display = "none";	
+				if(password.value.length > 0)
+				{
+				
+					errorInPassword.style.display = "none";
+					if(rePassword.value.length > 0)
+					{
+						errorInRePassword.style.display = "none";
+					}
+					else
+					{
+						errorInRePassword.innerHTML = "Please re-type your password.";
+					}
+				}
+				else 
+				{
+					errorInPassword.innerHTML = "Please enter a valid password.";
+				}
+				
+				
+			}
+			else 
+			{
+				errorInUsername.innerHTML = "Please enter a valid username.";
+			}
+			
+		}
+		
+		
+		</script>
+	</body>
+	
+</html>

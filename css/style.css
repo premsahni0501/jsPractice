@@ -1,0 +1,469 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'open sans';
+  margin: 0 auto;
+  background-color:#ddd;
+  overflow: hidden;
+}
+
+
+.login-form{
+  min-width: 800px;
+  margin: auto auto;
+  background-color:white;
+  padding:20px;
+  margin-top:10%;
+  box-shadow: 1px 1px 10px #333;
+}
+.calc-form{
+  min-width: 500px;
+  margin: auto auto;
+  background-color:white;
+  padding:20px;
+  margin-top:10%;
+  box-shadow: 1px 1px 10px #333;
+}
+
+.input-box{
+  margin:0;
+  padding:0 10px;
+  line-height:2em;
+  color:#192d33;
+  font-weight:bold;
+  width:100%;
+  display:block;
+  height:30vh;
+}
+
+
+.calc-input-box{
+  margin:0;
+  padding:0 10px;
+  line-height:50px;
+  color:#192d33;
+  font-weight:lighter;;
+  font-size:2em;
+  width:100%;
+  display:block;
+  text-align:right;
+}
+
+.button{
+  border:1px solid #ddd;
+  line-height:50px;
+  color:white;
+  font-weight:400;
+  background:#ef3a65;
+  cursor:pointer;
+  display:inline-block;
+  width:100%;
+  border-radius: 20px;
+  text-align:center;
+  font-size:1em;
+}
+
+.calc-button{
+  border:0.1px solid #eee;
+  line-height:50px;
+  color:#ef3a65;
+  font-weight:400;
+  background:white;
+  cursor:pointer;
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  font-size:1em;
+}
+
+.calc-button:hover,.calc-button:active
+{
+	background-color:#eee;
+}
+
+.button:hover,.button:active
+{
+  background-color:#f36889;
+}
+
+#demo,#errorMsg{
+  margin-bottom:10px;
+}
+
+#errorMsg{
+  color:red;
+}
+.textfield{
+  margin-bottom:10px;
+  text-align:right;
+}
+.textfield::active{
+  border:blue;
+}
+
+.textfield
+{
+  position:relative;
+}
+
+.calc-textfield{
+  margin-bottom:10px;
+  text-align:right;
+}
+.calc-textfield::active{
+  border:blue;
+}
+
+.calc-textfield
+{
+	position:relative;
+}
+
+#sym-placeholder
+{
+  position:absolute;
+  top:0;
+  left:5px;
+  font-weight:bold;
+}
+
+.100%{
+  width:100%;
+}
+
+.my-logo{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  display: inline-block;
+}
+
+.my-logo:hover{
+  background-color: #238a93;
+}
+
+.my-logo>img{
+  width: 20px;
+}
+.logo{
+  font-family:'amita';
+  font-weight:bold;
+  color:#ef3a65;
+  text-align:center;
+  font-size:1em;
+}
+
+.logo:after{
+  content:"";
+  display:block;
+  height:1px;
+  background-color:#eee;
+}
+
+.err{
+  color:red;
+  font-size:0.7em;
+}
+
+.clearfix::after
+{
+  content:"";
+  clear:both;
+  display: block;
+}
+
+.row
+{
+  clear:both;
+  width:100%;
+}
+.col
+{
+  float:left;
+}
+
+.col-3-12
+{
+  width:25%;
+}
+
+.col-6-12
+{
+  width:50%;
+}
+
+.col-9-12
+{
+  width:75%;
+}
+
+.col-12-12
+{
+  width:100%;
+}
+
+#sym-placeholder
+{
+  position:absolute;
+  top:0;
+  left:5px;
+  font-weight:bold;
+}
+
+.green
+{
+  background-color:#5bbc6b;
+}
+
+.blue
+{
+  background-color:#5793c4;
+}
+
+.yellow
+{
+  background-color:#ffce00;
+  color: black;
+}
+.green:hover,.green:active
+{
+  background-color:#4b9e58;
+}
+
+.yellow:hover,.yellow:active
+{
+  background-color:#ddb305;
+}
+
+.blue:hover,.blue:active
+{
+  background-color:#4b779b;
+}
+
+.border-bottom
+{
+  border-bottom: 1px solid #bbb;
+}
+
+.border-top
+{
+  border-top: 1px solid #bbb;
+}
+
+.border-left
+{
+  border-left: 1px solid #bbb;
+}
+
+.border-right
+{
+  border-right: 1px solid #bbb;
+}
+
+.main-editor,.side-bar
+{
+  position:relative;
+}
+
+.side-bar-frame
+{
+  padding-right:15px;
+  line-height: 40px;
+}
+.side-bar
+{
+  padding:5px;
+  font-weight:bold;
+  color:#888;
+  background-color:#eee;
+}
+.notes-list
+{
+  font-size:0.8em;
+  color:#222;
+}
+.notes-list>p
+{
+  position:relative;
+}
+.gt-arrow:after
+{
+  content:">";
+  position: absolute;
+  right: 10px;
+  line-height:40px;
+}
+.notes-list>p:hover
+{
+  cursor:pointer;
+}
+.circular-button
+{
+  width: 30px;
+  height: 30px;
+  background:none;
+  border:none;
+  background-color:#ef3a65;
+  color:white;
+  border-radius:30px;
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  box-shadow: 0px 4px 4px #bbb;
+}
+.list-button
+{
+  background:none;
+  border:none;
+  color:#666;
+  bottom:10px;
+  right:10px;
+  line-height:40px;
+  text-align:left;
+  padding-left:10px;
+  border-top:1px solid #ddd;
+}
+
+.list-button:active,.list-button:focus,.list-button:visited{
+  border: 1px solid #555;
+}
+
+
+.circular-button:hover,.list-button:hover
+{
+  box-shadow: 0px 4px 4px #888888;
+}
+.save-btn
+{
+  background-color:#3aa756;
+}
+.save-btn:hover
+{
+  border: 4px solid #2b8c44;
+}
+
+.create-btn
+{
+  background-color:#e64169;
+}
+.create-btn:hover
+{
+  border: 4px solid #c5395b;
+}
+
+.new-note-frame
+{
+  position:relative;
+  height:40px;
+}
+
+#charCount
+{
+  font-size: 0.6em;
+  color:#777;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+  font-size: 0.7em;
+  padding-left: 10px;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.float-left{
+    float:left;
+}
+
+.float-right
+{
+  float:right;
+}
+.status-bar{
+  display:block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 30px;
+  background-color: #26acb8;
+  color:white;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  font-size: 1em;
+  line-height: 20px;
+}
+
+
+.app-launch-pad
+{
+  position: fixed;
+  bottom: 0;
+  background: url('../img/launchpad_bg.png') left bottom repeat-x ;
+  width: 100%;
+  z-index: 20;
+}
+
+.apps{
+  width: 80%;
+  padding: 10px 0px;
+  margin: 0 auto;
+}
+
+.launch-pad-app
+{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  color:black;
+  overflow: hidden;
+  border-radius: 20px;
+  line-height: 80px;
+  margin-right: 24px;
+}
+
+.img-responsive
+{
+  display: inline-block;
+}
+.desktop
+{
+  position: relative;
+}
+
+.desktop::after
+{
+  content:"";
+  display: block;
+  height: 120px;
+}
+
+
+#calculator,#toDoNotes{
+  /*width: 100%;*/
+  position: absolute;
+  display: none;
+  height: 0px;
+}
+
+#calculatorIcon,#toDoNotesIcon
+{
+  cursor: pointer;
+}
+
+.close-btn{
+  background-color: #d33c3c;
+  color:white;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 40px;
+  line-height: 40px;
+  width: 40px;
+  text-align: center;
+}
